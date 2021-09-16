@@ -1,0 +1,358 @@
+body{
+    margin: 0;
+    height: 100vh;
+    perspective: 1000px;
+    user-select: none;
+    overflow-y: hidden;
+    /* background: url("./assets/lightning2.jpg") no-repeat; */
+    background: url("./assets/arcade_background.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+*{
+    -webkit-user-drag: none;
+}
+
+#doesnt_work_on_mobile{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    align-items: center;
+    background-color: white;
+    z-index: 5;
+    font-size: 7vw;
+    text-align: center;
+    font-family: "Budmo", sans-serif;
+}
+
+#arrow_keys{
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    width: 5%;
+}
+
+@font-face {
+    font-family: 'Circus';
+    src: url("./assets/fonts/Circus.ttf")  format('truetype');
+}
+
+@font-face {
+    font-family: 'Budmo';
+    src: url("./assets/fonts/budmo\ jiggler.ttf")  format('truetype');
+}
+
+button{
+    position: absolute;
+    margin: 0 2vw;
+    padding: 1vw 2vw;
+    border-radius: 1vw;
+    background: linear-gradient(to right bottom,purple, orange, purple);
+    color: white;
+    border: double rgb(187, 74, 45) 1vw;
+    box-shadow: 3px 20px 5px rgb(15, 15, 61);
+    font-size: 5vw;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: rotateX(50deg);
+    font-family: "Budmo", sans-serif;
+
+}
+
+button:hover{
+    background: linear-gradient(to right bottom,orange, purple, orange);
+    transition: .5s;
+    bottom: 40px !important;
+    box-shadow: 1px 1px 5px rgb(15, 15, 61);
+}
+
+#start{
+    position: absolute;
+    bottom: 50px;
+    left: 30vw;
+}
+
+#start:hover{
+    color: green;
+}
+
+#reset{
+    position: absolute;
+    bottom: 50px;
+    right: 16vw;
+}
+
+#reset:hover{
+    color: red;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./assets/arcade2.png");
+    background-size: 100% 130%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#main_body{
+    width: 52vw;
+    height: 60%;
+    margin-top: -8vw;
+    transform: rotateX(10deg);
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#main_body #click_to_start{
+    width: 79%;
+    color: white;
+    font-size: 3vw;
+    font-family: "Circus", sans-serif;
+    animation: linear margat infinite 2s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    letter-spacing: 0.5vw;
+}
+
+@keyframes margat {
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+#screen{
+    width: 100%;
+    border-radius: 5vw;
+    background: linear-gradient(to bottom right, rgb(78, 77, 77), black);
+    box-shadow: 0 0 .5vw white; 
+    border: inset .5vw black;
+    transform: rotateX(10deg);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: hidden;
+    margin-top: -1vw;
+}
+
+.little_squares{
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 1px;
+    margin: 1.5px;
+}
+
+#left_control{
+    position: absolute;
+    left: 23vw;
+    width: 50px;
+    bottom: 75px;
+    height: 100px;
+    overflow: hidden;
+}
+
+#right_control{
+    position: absolute;
+    right: 40vw;
+    bottom: 75px;
+    width: 50px;
+    height: 100px;
+    overflow: hidden;
+    transform-origin: bottom center;
+    transform-style: preserve-3d;
+}
+
+.control_images{
+    width: 100%;
+    transition: .5s;
+}
+
+#left_red_ball{
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+}
+
+#right_red_ball{
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+}
+
+#left_stick{
+    position: absolute;
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+#right_stick{
+    position: absolute;
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+
+@media only screen and (max-width: 800px) {
+    #doesnt_work_on_mobile{
+        display: flex;
+    }
+}
+
+/*//////////////////////////////////////////////*/
+/*////////////////// SUB SCREEN ////////////////*/
+/*//////////////////////////////////////////////*/
+
+
+.games_menu{
+    width: 100%;
+    height: 100%;
+    border-radius: 5vw;
+    background: linear-gradient(to bottom right, rgb(78, 77, 77), black);
+    transform: rotateX(10deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1vw;
+    color: white;
+    font-size: 1.5vw;
+    font-family: sans-serif;
+}
+
+.games_menu h1{
+    font-family: "Circus", sans-serif;
+    font-size: 3vw;
+}
+
+.games_menu h3:hover{
+    color: grey;
+    transition: .5s;
+    cursor: pointer;
+    text-shadow: 0 0 2px white;
+}
+
+
+/*//////////////////////////////////////////////*/
+/*//////////////// TETRIS SCREEN ///////////////*/
+/*//////////////////////////////////////////////*/
+
+.tetris_screen{
+    width: 100%;
+    height: 100%;
+    border-radius: 5vw;
+    transform: rotateX(10deg);
+    background: url("./assets/tetris.jpg") no-repeat;
+    background-size: 100% 100%;
+    transition: 1s;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#timer{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1vw 2vw;
+    border-radius: 2vw;
+    margin-bottom: 2vw;
+    border: solid 3px white;
+}
+
+#score{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1vw 2vw;
+    border-radius: 2vw;
+    border: solid 3px white;
+}
+
+#tetris_display{
+    width: 46.5%;
+    height: 100%;
+    border: solid 3px black;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid_square{
+    border: dotted 1px black;
+    box-sizing: border-box;
+}
+
+#next_figure{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1vw 1vw;
+    border-radius: 2vw;
+    width: 20%;
+    height: 60%;
+    text-align: center;
+    font-size: 1.5vw;
+    font-family: "Circus", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: solid 3px white;
+}
+
+
+/*//////////////////////////////////////////////*/
+/*//////////////// TETRIS COLORS ///////////////*/
+/*//////////////////////////////////////////////*/
+
+.aqua{
+    background-color: #00ffff;
+    border: outset 0.5vw #00ffff;
+}
+
+.yellow{
+    background-color: #ffff00;
+    border: outset 0.5vw #ffff00;
+}
+
+.purple{
+    background-color: #800080;
+    border: outset 0.5vw #800080;
+}
+
+.green{
+    background-color: #00ff00;
+    border: outset 0.5vw #00ff00;
+}
+
+.red{
+    background-color: #ff0000;
+    border: outset 0.5vw #ff0000;
+}
+
+.blue{
+    background-color: #0000ff;
+    border: outset 0.5vw #0000ff;
+}
+
+.orange{
+    background-color: #ff7f00;
+    border: outset 0.5vw #ff7f00;
+}
+
+.grey{
+    background-color: #7f7f7f;
+    border: outset 0.5vw #7f7f7f;
+}
