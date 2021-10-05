@@ -4,7 +4,6 @@ body{
     perspective: 1000px;
     user-select: none;
     overflow-y: hidden;
-    /* background: url("./assets/lightning2.jpg") no-repeat; */
     background: url("./assets/arcade_background.jpg") no-repeat;
     background-size: 100% 100%;
 }
@@ -67,6 +66,16 @@ button:hover{
     transition: .5s;
     bottom: 40px !important;
     box-shadow: 1px 1px 5px rgb(15, 15, 61);
+}
+
+#stop{
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    top: 0;
+    background: white;
+    padding: 1vw 2vw;
+    cursor: pointer;
 }
 
 #start{
@@ -280,6 +289,7 @@ button:hover{
     padding: 1vw 2vw;
     border-radius: 2vw;
     border: solid 3px white;
+    text-align: center;
 }
 
 #tetris_display{
