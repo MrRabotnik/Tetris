@@ -195,18 +195,18 @@ function changePos (block){
         }
     }else if(block == "S"){
         if(!temp5){
-            X2 -= 1; 
-            X3 -= 2;
-            X4 -= 3;
-            Y2 -= 1;
-            Y4 -= 1;
+            X1 -= 2
+            X2 -= 3
+            X4 -= 1
+            Y2 -= 1
+            Y4 -= 1
             temp5 = true
         }else{
-            X2 += 1; 
-            X3 += 2;
-            X4 += 3;
-            Y2 += 1;
-            Y4 += 1;
+            X1 += 2
+            X2 += 3
+            X4 += 1
+            Y2 += 1
+            Y4 += 1
             temp5 = false
         }
     }else if(block == "J"){
@@ -354,7 +354,7 @@ function getYCoords(block){
         Y4 = 1
     }else if(block == "S"){
         Y1 = 0
-        Y2 = 1
+        Y2 = 0
         Y3 = 1
         Y4 = 1
     }else if(block == "J"){
