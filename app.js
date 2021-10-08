@@ -3,7 +3,6 @@
 //////// Defining Variables /////////
 /////////////////////////////////////
 let startBtn = document.getElementById("start");
-let stopBtn = document.getElementById("stop");
 let resetBtn = document.getElementById("reset");
 let screen = document.getElementById("screen");
 let clickToStartText = document.getElementById("click_to_start");
@@ -404,10 +403,6 @@ function startTetrisGame(){
     count++
 }
 
-function stopTetris(){
-    clearInterval(figureDrop)
-}
-
 function checkIfNothingUnder(block){
     let otherBlocks  = document.getElementById(`id_${X1}_${Y1}`).className.split(" ")[2]
     let otherBlocks2 = document.getElementById(`id_${X2}_${Y2}`).className.split(" ")[2]
@@ -534,6 +529,5 @@ function reset(){
 //////// Calling Functions //////////
 /////////////////////////////////////
 startBtn.addEventListener('click', startMachine);
-stopBtn.addEventListener('click', stopTetris);
 resetBtn.addEventListener('click', reset);
 screen.addEventListener('click', startMachine);
